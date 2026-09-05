@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>旅遊行程表</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            body { background-color: #0f172a; color: #f8fafc; }
+            .card { background-color: #1e293b; border-color: #334155; }
+        }
+        @media (prefers-color-scheme: light) {
+            body { background-color: #f8fafc; color: #0f172a; }
+            .card { background-color: #ffffff; border-color: #e2e8f0; }
+        }
+    </style>
+</head>
+<body class="p-4 max-w-md mx-auto font-sans transition-colors duration-300">
+
+    <!-- 頂部倒計時卡片 -->
+    <div class="card p-5 rounded-2xl shadow-sm border mb-4 text-center">
+        <p class="text-xs text-gray-500 dark:text-gray-400 mb-1 font-bold">NEXT EVENT</p>
+        <h2 id="next-event-title" class="text-lg font-bold">前往機場 / 準備出發</h2>
+        <div id="countdown" class="text-2xl font-extrabold text-indigo-600 dark:text-indigo-400 my-2">00 天 00 小時 00 分</div>
+        <p class="text-xs text-gray-400">距離出發時間</p>
+    </div>
+
+    <!-- 行程清單 -->
+    <div class="space-y-3">
+        <h3 class="font-bold text-base px-1">Day 1 行程範例</h3>
+        
+        <!-- 地點卡片 1 -->
+        <a href="https://www.google.com/maps/search/?api=1&query=桃園國際機場" target="_blank" 
+           class="card block p-4 rounded-xl border hover:border-indigo-500 transition-all shadow-sm">
+            <div class="flex justify-between items-center">
+                <div>
+                    <span class="text-xs font-semibold px-2 py-0.5 rounded bg-indigo-100 text-indigo-700 dark:bg-indigo-900/50 dark:text-indigo-300">08:00</span>
+                    <h4 class="font-bold text-base mt-1">桃園國際機場 第一航廈</h4>
+                    <p class="text-xs text-gray-500 dark:text-gray-400 mt-0.5">點擊卡片直接開 Google 地圖導航 ➔</p>
+                </div>
+            </div>
+        </a>
+
+        <!-- 地點卡片 2 -->
+        <a href="https://www.google.com/maps/search/?api=1&query=東京車站" target="_blank" 
+           class="card block p-4 rounded-xl border hover:border-indigo-500 transition-all shadow-sm">
+            <div class="flex justify-between items-center">
+                <div>
+                    <span class="text-xs font-semibold px-2 py-0.5 rounded bg-indigo-100 text-indigo-700 dark:bg-indigo-900/50 dark:text-indigo-300">13:30</span>
+                    <h4 class="font-bold text-base mt-1">抵達目的地 / 飯店 Check-in</h4>
+                    <p class="text-xs text-gray-500 dark:text-gray-400 mt-0.5">點擊開啟導航 ➔</p>
+                </div>
+            </div>
+        </a>
+    </div>
+
+    <!-- 簡易倒計時腳本 -->
+    <script>
+        // 設定出發目標時間（請自行更換日期時間）
+        const targetDate = new Date("2026-10-01T08:00:00").getTime();
+
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const difference = targetDate - now;
+
+            if (difference > 0) {
+                const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+                document.getElementById("countdown").innerText = `${days} 天 ${hours} 小時 ${minutes} 分`;
+            } else {
+                document.getElementById("countdown").innerText = "行程進行中！";
+            }
+        }
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+    </script>
+</body>
+</html>
