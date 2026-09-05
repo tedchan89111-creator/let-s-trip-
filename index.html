@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>旅遊行程表</title>
+    <title>台北之旅 2026</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         @media (prefers-color-scheme: dark) {
@@ -19,46 +19,100 @@
 <body class="p-4 max-w-md mx-auto font-sans transition-colors duration-300">
 
     <!-- 頂部倒計時卡片 -->
-    <div class="card p-5 rounded-2xl shadow-sm border mb-4 text-center">
-        <p class="text-xs text-gray-500 dark:text-gray-400 mb-1 font-bold">NEXT EVENT</p>
-        <h2 id="next-event-title" class="text-lg font-bold">前往機場 / 準備出發</h2>
-        <div id="countdown" class="text-2xl font-extrabold text-indigo-600 dark:text-indigo-400 my-2">00 天 00 小時 00 分</div>
-        <p class="text-xs text-gray-400">距離出發時間</p>
+    <div class="card p-5 rounded-2xl shadow-sm border mb-5 text-center">
+        <p class="text-xs text-indigo-500 font-bold tracking-wider mb-1">NEXT FLIGHT</p>
+        <h2 id="next-event-title" class="text-lg font-bold">CX927 長沙起飛 ✈️</h2>
+        <div id="countdown" class="text-2xl font-extrabold text-indigo-600 dark:text-indigo-400 my-2">計算中...</div>
+        <p class="text-xs text-gray-400">距離 2026/10/01 13:00 起飛時間</p>
     </div>
 
-    <!-- 行程清單 -->
-    <div class="space-y-3">
-        <h3 class="font-bold text-base px-1">Day 1 行程範例</h3>
+    <!-- 每日行程列表 -->
+    <div class="space-y-4">
+        <div class="flex items-center justify-between px-1">
+            <h3 class="font-bold text-lg">Day 1 · 10/01 (四) 抵達台北</h3>
+            <span class="text-xs text-gray-400">長沙 ➔ 香港 ➔ 台北</span>
+        </div>
         
-        <!-- 地點卡片 1 -->
-        <a href="https://www.google.com/maps/search/?api=1&query=桃園國際機場" target="_blank" 
+        <!-- 卡片 1：長沙起飛 -->
+        <a href="https://www.google.com/maps/search/?api=1&query=長沙黃花國際機場" target="_blank" 
            class="card block p-4 rounded-xl border hover:border-indigo-500 transition-all shadow-sm">
-            <div class="flex justify-between items-center">
+            <div class="flex justify-between items-start">
                 <div>
-                    <span class="text-xs font-semibold px-2 py-0.5 rounded bg-indigo-100 text-indigo-700 dark:bg-indigo-900/50 dark:text-indigo-300">08:00</span>
-                    <h4 class="font-bold text-base mt-1">桃園國際機場 第一航廈</h4>
-                    <p class="text-xs text-gray-500 dark:text-gray-400 mt-0.5">點擊卡片直接開 Google 地圖導航 ➔</p>
+                    <span class="text-xs font-semibold px-2 py-0.5 rounded bg-indigo-100 text-indigo-700 dark:bg-indigo-900/50 dark:text-indigo-300">11:00</span>
+                    <h4 class="font-bold text-base mt-1.5">長沙黃花機場 辦理登機</h4>
+                    <p class="text-xs text-gray-500 dark:text-gray-400 mt-1">國泰航空 CX927 (13:00 起飛)</p>
                 </div>
+                <span class="text-xs text-indigo-500">導航 ➔</span>
             </div>
         </a>
 
-        <!-- 地點卡片 2 -->
-        <a href="https://www.google.com/maps/search/?api=1&query=東京車站" target="_blank" 
+        <!-- 卡片 2：香港轉機 -->
+        <a href="https://www.google.com/maps/search/?api=1&query=香港國際機場" target="_blank" 
            class="card block p-4 rounded-xl border hover:border-indigo-500 transition-all shadow-sm">
-            <div class="flex justify-between items-center">
+            <div class="flex justify-between items-start">
                 <div>
-                    <span class="text-xs font-semibold px-2 py-0.5 rounded bg-indigo-100 text-indigo-700 dark:bg-indigo-900/50 dark:text-indigo-300">13:30</span>
-                    <h4 class="font-bold text-base mt-1">抵達目的地 / 飯店 Check-in</h4>
-                    <p class="text-xs text-gray-500 dark:text-gray-400 mt-0.5">點擊開啟導航 ➔</p>
+                    <span class="text-xs font-semibold px-2 py-0.5 rounded bg-amber-100 text-amber-700 dark:bg-amber-900/50 dark:text-amber-300">14:45 - 15:45</span>
+                    <h4 class="font-bold text-base mt-1.5">香港機場 轉機前往台北</h4>
+                    <p class="text-xs text-gray-500 dark:text-gray-400 mt-1">轉乘 CX472 (轉機時間 1 小時)</p>
                 </div>
+                <span class="text-xs text-indigo-500">導航 ➔</span>
+            </div>
+        </a>
+
+        <!-- 卡片 3：抵達桃園機場 -->
+        <a href="https://www.google.com/maps/search/?api=1&query=桃園國際機場第一航廈" target="_blank" 
+           class="card block p-4 rounded-xl border hover:border-indigo-500 transition-all shadow-sm">
+            <div class="flex justify-between items-start">
+                <div>
+                    <span class="text-xs font-semibold px-2 py-0.5 rounded bg-emerald-100 text-emerald-700 dark:bg-emerald-900/50 dark:text-emerald-300">17:40</span>
+                    <h4 class="font-bold text-base mt-1.5">抵達桃園國際機場 (TPE)</h4>
+                    <p class="text-xs text-gray-500 dark:text-gray-400 mt-1">入境、提領行李與購買車票</p>
+                </div>
+                <span class="text-xs text-indigo-500">導航 ➔</span>
+            </div>
+        </a>
+
+        <!-- 卡片 4：機場捷運前往市區 -->
+        <a href="https://www.google.com/maps/search/?api=1&query=台北車站" target="_blank" 
+           class="card block p-4 rounded-xl border hover:border-indigo-500 transition-all shadow-sm">
+            <div class="flex justify-between items-start">
+                <div>
+                    <span class="text-xs font-semibold px-2 py-0.5 rounded bg-indigo-100 text-indigo-700 dark:bg-indigo-900/50 dark:text-indigo-300">18:40 - 19:30</span>
+                    <h4 class="font-bold text-base mt-1.5">搭乘機場捷運 ➔ 台北市區</h4>
+                    <p class="text-xs text-gray-500 dark:text-gray-400 mt-1">搭乘直達車約 39 分鐘抵達台北車站</p>
+                </div>
+                <span class="text-xs text-indigo-500">導航 ➔</span>
+            </div>
+        </a>
+
+        <!-- 卡片 5：飯店 Check-in -->
+        <div class="card block p-4 rounded-xl border shadow-sm">
+            <div class="flex justify-between items-start">
+                <div>
+                    <span class="text-xs font-semibold px-2 py-0.5 rounded bg-indigo-100 text-indigo-700 dark:bg-indigo-900/50 dark:text-indigo-300">19:30</span>
+                    <h4 class="font-bold text-base mt-1.5">飯店 Check-in & 放置行李</h4>
+                    <p class="text-xs text-gray-500 dark:text-gray-400 mt-1">（請補充住宿飯店名稱）</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 卡片 6：晚宴/夜市行程 -->
+        <a href="https://www.google.com/maps/search/?api=1&query=寧夏夜市" target="_blank" 
+           class="card block p-4 rounded-xl border hover:border-indigo-500 transition-all shadow-sm">
+            <div class="flex justify-between items-start">
+                <div>
+                    <span class="text-xs font-semibold px-2 py-0.5 rounded bg-rose-100 text-rose-700 dark:bg-rose-900/50 dark:text-rose-300">20:15</span>
+                    <h4 class="font-bold text-base mt-1.5">寧夏夜市 美食巡禮 🍜</h4>
+                    <p class="text-xs text-gray-500 dark:text-gray-400 mt-1">品嚐蚵仔煎、劉芋仔蛋黃芋餅、千歲宴</p>
+                </div>
+                <span class="text-xs text-indigo-500">導航 ➔</span>
             </div>
         </a>
     </div>
 
-    <!-- 簡易倒計時腳本 -->
+    <!-- 自動倒計時指令碼 -->
     <script>
-        // 設定出發目標時間（請自行更換日期時間）
-        const targetDate = new Date("2026-10-01T08:00:00").getTime();
+        const targetDate = new Date("2026-10-01T13:00:00").getTime();
 
         function updateCountdown() {
             const now = new Date().getTime();
@@ -70,7 +124,7 @@
                 const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
                 document.getElementById("countdown").innerText = `${days} 天 ${hours} 小時 ${minutes} 分`;
             } else {
-                document.getElementById("countdown").innerText = "行程進行中！";
+                document.getElementById("countdown").innerText = "旅程已開啟！✈️";
             }
         }
         setInterval(updateCountdown, 1000);
